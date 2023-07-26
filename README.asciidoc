@@ -1,0 +1,29 @@
+= Anytype
+:uri-anytype-home: https://anytype.io/
+
+{uri-anytype-home}[Anytype^] is a local-first, E2E encrypted software designed as a secure place to create and store digital assets.
+
+== Build, Install and Run Flatpak (locally)
+
+Assuming `flatpak-builder` and `git` packages are installed, execute the following commands:
+
+[source,shellscript]
+----
+$ git clone https://github.com/flathub/com.anytype.anytype.git
+$ cd com.anytype.anytype/
+$ git submodule update --init --recursive
+$ git submodule update --remote --merge
+$ git submodule foreach git pull origin master
+$ flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+$ flatpak-builder build --force-clean --install-deps-from flathub --install --user com.anytype.anytype.yaml
+
+# Uninstall the artifact
+$ flatpak uninstall --delete-data --user com.anytype.anytype
+
+# Clean-up everything
+$ rm --force --recursive .flatpak-builder/ build/
+$ flatpak uninstall --unused --user
+$ flatpak remote-delete --user flathub
+----
+
+// https://www.freedesktop.org/software/appstream/metainfocreator/

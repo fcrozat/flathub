@@ -1,0 +1,26 @@
+#
+# Excludes
+.flatpak-builder/
+.history/
+.idea/
+.settings/
+.vscode/
+build/
+
+.DS_Store
+.classpath
+.env
+.project
+.rtx.toml
+.tool-versions
+Thumbs.db
+*.iml
+*.ipr
+*.iws
+*.log
+*.tar
+*.tgz
+*.zip
+
+#
+# Includes
