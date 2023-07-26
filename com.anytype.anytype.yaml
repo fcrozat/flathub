@@ -4,19 +4,19 @@ base: org.electronjs.Electron2.BaseApp
 base-version: "22.08"
 command: anytype
 finish-args:
-  - --device=dri
-  - --share=ipc
-  - --share=network
-  - --socket=wayland
-  - --socket=x11
-  - --talk-name=org.freedesktop.Notifications
-  - --talk-name=org.freedesktop.secrets
-  # Evaluating
-  - --filesystem=host
-  - --filesystem=xdg-run/keyring
+  - --device dri
+  - --share ipc
+  - --share network
+  - --socket pulseaudio
+  - --socket wayland
+  - --socket x11
+  - --talk-name org.freedesktop.Notifications
+  # Evaluating Permissions
+  - --filesystem xdg-documents
+  - --filesystem xdg-download
+  - --filesystem xdg-music
+  - --filesystem xdg-pictures
 modules:
-  - shared-modules/libsecret/libsecret.json
-
   - name: anytype
     buildsystem: simple
     build-commands:
