@@ -17,10 +17,10 @@ finish-args:
   - --filesystem=xdg-pictures
 
 modules:
+  - shared-modules/libsecret/libsecret.json
   - name: anytype
     buildsystem: simple
     build-commands:
-      # TODO: Build from sources, but first release in this way
       - ar -o -x anytype_amd64.deb
       - tar --extract --file data.tar.xz
       - cp --preserve --recursive opt/* usr/* /app
