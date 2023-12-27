@@ -4,18 +4,18 @@ base: org.electronjs.Electron2.BaseApp
 base-version: "23.08"
 command: anytype
 finish-args:
-  - --device dri
-  - --share ipc
-  - --share network
-  - --socket pulseaudio
-  - --socket wayland
-  - --socket x11
-  - --talk-name org.freedesktop.Notifications
-  # Evaluating Permissions
-  - --filesystem xdg-documents
-  - --filesystem xdg-download
-  - --filesystem xdg-music
-  - --filesystem xdg-pictures
+  - --device=dri
+  - --share=ipc
+  - --share=network
+  - --socket=pulseaudio
+  - --socket=wayland
+  - --socket=x11
+  - --talk-name=org.freedesktop.Notifications
+  - --filesystem=xdg-documents
+  - --filesystem=xdg-download
+  - --filesystem=xdg-music
+  - --filesystem=xdg-pictures
+
 modules:
   - name: anytype
     buildsystem: simple
