@@ -1,4 +1,3 @@
----
 app-id: com.anytype.anytype
 base: org.electronjs.Electron2.BaseApp
 base-version: "23.08"
@@ -34,9 +33,8 @@ modules:
         dest-filename: anytype_amd64.deb
         only-arches:
           - x86_64
-        sha256: 00df78d50cd198adcd2191f8df8326acc487943666a386f73557835c5b92ecc3
-        url: https://github.com/anyproto/anytype-ts/releases/download/v0.37.0/anytype_0.37.0_amd64.deb
-        # TODO: Integrate x-checker-data
+        sha256: 3fb7c39a5a26b82184c0fd9a6b44d7899853f1db0ae27342c4ae9c2bcc3d389b
+        url: https://github.com/anyproto/anytype-ts/releases/download/v0.37.2/anytype_0.37.2_amd64.deb
       - type: file
         path: com.anytype.anytype.metainfo.xml
       - type: file
