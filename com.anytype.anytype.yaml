@@ -1,7 +1,7 @@
 ---
 app-id: com.anytype.anytype
 base: org.electronjs.Electron2.BaseApp
-base-version: "22.08"
+base-version: "23.08"
 command: anytype
 finish-args:
   - --device dri
@@ -48,6 +48,6 @@ modules:
         dest-filename: com.anytype.anytype.sh
 rename-desktop-file: anytype.desktop
 runtime: org.freedesktop.Platform
-runtime-version: "22.08"
+runtime-version: "23.08"
 sdk: org.freedesktop.Sdk
 separate-locales: false
