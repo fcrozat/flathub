@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>com.anytype.anytype</id>
+  <id>io.anytype.anytype</id>
 
   <name>Anytype</name>
   <summary>The everything app for those who celebrate trust and autonomy</summary>
@@ -20,7 +20,7 @@
   <developer_name>Any Association</developer_name>
   <update_contact>info@anytype.io</update_contact>
 
-  <launchable type="desktop-id">com.anytype.anytype.desktop</launchable>
+  <launchable type="desktop-id">io.anytype.anytype.desktop</launchable>
 
   <releases>
     <release version="0.33.3" date="2023-07-19" />
