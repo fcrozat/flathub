@@ -1,0 +1,43 @@
+app-id: org.musescore.MuseSampler
+base-version: '23.08'
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: MuseSampler.sh
+
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --share=network
+  - --filesystem=home # to write ~/.local/share/MuseSampler/lib/._libMuseSamplerCoreLib.so and ~/.muse-sounds-manager
+
+modules:
+  - name: MuseSampler
+    buildsystem: simple
+    build-commands:
+      - ar -o -x MuseSampler.deb
+      - tar -xJf data.tar.xz
+      - ls -l ${FLATPAK_DEST}
+      - mkdir ${FLATPAK_DEST}/bin
+      - cp -r ./opt/muse-sounds-manager/* ${FLATPAK_DEST}/bin
+      - install -m 755 MuseSampler.sh ${FLATPAK_DEST}/bin
+      - cp ./usr/share/applications/muse-sounds-manager.desktop org.musescore.MuseSampler.desktop
+
+      # mime
+      - desktop-file-edit --set-icon org.musescore.MuseSampler --set-key Exec --set-value 'MuseSampler.sh %u' org.musescore.MuseSampler.desktop
+      - install -Dm644 org.musescore.MuseSampler.desktop -t /app/share/applications
+
+      # Icons 
+      - cp ./usr/share/icons/hicolor/256x256/apps/muse-sounds-manager.png org.musescore.MuseSampler.png
+      - install -Dm644 org.musescore.MuseSampler.png -t /app/share/icons/hicolor/256x256/apps
+
+    sources:
+      - type: file
+        path: MuseSampler.sh
+      - type: file
+        dest-filename: MuseSampler.deb
+        only-arches:
+          - x86_64
+        sha256: c3364022399ed5cbfcfa330b88a4fb91442f09bf9486cbce9cb0d5e2108bde1c
+        url: https://muse-cdn.com/Muse_Sounds_Manager_Beta.deb
+
